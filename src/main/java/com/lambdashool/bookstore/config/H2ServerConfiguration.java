@@ -1,4 +1,4 @@
-package com.example.bookstore.config;
+package com.lambdashool.bookstore.config;
 
 
 import org.h2.tools.Server;

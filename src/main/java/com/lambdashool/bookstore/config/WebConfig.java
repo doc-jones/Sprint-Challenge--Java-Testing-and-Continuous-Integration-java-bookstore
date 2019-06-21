@@ -1,4 +1,4 @@
-package com.example.bookstore.config;
+package com.lambdashool.bookstore.config;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
