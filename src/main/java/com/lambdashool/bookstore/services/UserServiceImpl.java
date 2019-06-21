@@ -1,9 +1,10 @@
 package com.lambdashool.bookstore.services;
 
-import com.lambdaschool.school.model.User;
-import com.lambdaschool.school.model.UserRoles;
-import com.lambdaschool.school.repository.RoleRepository;
-import com.lambdaschool.school.repository.UserRepository;
+
+import com.lambdashool.bookstore.models.User;
+import com.lambdashool.bookstore.models.UserRoles;
+import com.lambdashool.bookstore.repos.RoleRepository;
+import com.lambdashool.bookstore.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
