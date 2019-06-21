@@ -79,11 +79,11 @@ public class StudentController
                                            @RequestBody
                                                    Author newStudent) throws URISyntaxException
     {
-        newStudent = studentService.save(newStudent);
+        newAuthor = authorService.save(newAtuhor);
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
-        URI newStudentURI = ServletUriComponentsBuilder.fromCurrentRequest().path("/{Studentid}").buildAndExpand(newStudent.getStudid()).toUri();
+        URI newStudentURI = ServletUriComponentsBuilder.fromCurrentRequest().path("/{Authorid}").buildAndExpand(newStudent.getAuthorid()).toUri();
         responseHeaders.setLocation(newStudentURI);
 
         return new ResponseEntity<>(null, responseHeaders, HttpStatus.CREATED);

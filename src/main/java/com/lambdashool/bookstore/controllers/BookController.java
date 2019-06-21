@@ -37,7 +37,21 @@ public class BookController
         return new ResponseEntity<>(myBooks, HttpStatus.OK);
     }
 
+    @ApiOperation(value = "Updates a book", notes = "The updated book id will be set in the location header", response = void.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Book Updated Successfully", response = void.class),
+            @ApiResponse(code = 500, message = "Error updating book", response = ErrorDetail.class)})
 
+    @PutMapping(value = "/data/books/{id}")
+    public ResponseEntity<?> updateStudent(
+            @RequestBody
+                    Book updateBook,
+            @PathVariable
+                    long Bookid)
+    {
+        bookService.update(updateBook, Bookid);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 
 
