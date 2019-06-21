@@ -22,9 +22,17 @@ public class Book
 //    @JsonView(View.booksOnly.class)
     private long bookid;
 
-    @ApiModelProperty(name = "bookname", value = "Name of book", required = false, example = "The name or title of a book")
+    @ApiModelProperty(name = "booktitle", value = "Title of book", required = false, example = "The name or title of a book")
 //    @JsonView(View.booksOnly.class)
-    private String bookname;
+    private String booktitle;
+
+    @ApiModelProperty(name = "bookISBN", value = "ISBN of book", required = false, example = "The ISBN of a book")
+//    @JsonView(View.booksOnly.class)
+    private String bookISBN;
+
+    @ApiModelProperty(name = "bookvopy", value = "Copyright year of book", required = false, example = "2019")
+//    @JsonView(View.booksOnly.class)
+    private int bookcopy;
 
 
     @ManyToMany(mappedBy = "books")
@@ -37,7 +45,23 @@ public class Book
 
     public Book(String bookname)
     {
-        this.bookname = bookname;
+        this.booktitle = bookname;
+    }
+
+    public String getBookISBN() {
+        return bookISBN;
+    }
+
+    public void setBookISBN(String bookISBN) {
+        this.bookISBN = bookISBN;
+    }
+
+    public int getBookcopy() {
+        return bookcopy;
+    }
+
+    public void setBookcopy(int bookcopy) {
+        this.bookcopy = bookcopy;
     }
 
     public long getbookid()
@@ -52,12 +76,12 @@ public class Book
 
     public String getbookname()
     {
-        return bookname;
+        return booktitle;
     }
 
     public void setbookname(String bookname)
     {
-        this.bookname = bookname;
+        this.booktitle = bookname;
     }
 
 

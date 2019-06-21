@@ -19,8 +19,11 @@ public class Author
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long authorid;
 
-    @ApiModelProperty(name = "authorname", value = "Author Name", required = true, example = "A person's name who is an author")
-    private String authorname;
+    @ApiModelProperty(name = "afirstname", value = "Author First Name", required = true, example = "A person's first name who is an author")
+    private String afirstname;
+
+    @ApiModelProperty(name = "alastname", value = "Author Last Name", required = true, example = "A person's last name who is an author")
+    private String alastname;
 
     @ManyToMany
     @JoinTable(name = "authorbooks",
@@ -33,9 +36,20 @@ public class Author
     {
     }
 
-    public Author(String studname)
-    {
-        this.authorname = studname;
+    public String getAfirstname() {
+        return afirstname;
+    }
+
+    public void setAfirstname(String afirstname) {
+        this.afirstname = afirstname;
+    }
+
+    public String getAlastname() {
+        return alastname;
+    }
+
+    public void setAlastname(String alastname) {
+        this.alastname = alastname;
     }
 
     public long getStudid()
@@ -46,16 +60,6 @@ public class Author
     public void setAuthorid(long studid)
     {
         this.authorid = studid;
-    }
-
-    public String getAuthorname()
-    {
-        return authorname;
-    }
-
-    public void setAuthorname(String authorname)
-    {
-        this.authorname = authorname;
     }
 
     public List<Book> getBooks()
